@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Selector</title>
+    <link rel="stylesheet" href='style/main.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Honk&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="startingline">Want to hear a joke?</h1>
+        <div class="response-area">
+            <p>
+                <%= content || "ENTER GIVEN DETAILS TO HEAR SOME JOKES FROM US" %>
+            </p>
+        </div>
+
+
+        <!-- Form Area -->
+        <div class="selector">
+            <form class="form-selector" action="/submit" method="POST">
+                <!-- Category Dropdown -->
+                <div class="heading category">
+                    <label id="category" class="header" for="categoryChoices">Category:</label>
+                    <select class="options" id="categoryChoices" name="category">
+                        <option value="Any">Any</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Misc">Misc</option>
+                    </select>
+                </div>
+                <br />
+
+                <div class="heading">
+                    <label id="format" class="header" for="formatChoices">format:</label>
+                    <select class="options" id="formatChoices" name="format">
+                        <option value="txt">Plain Text</option>
+                        <option value="xml">XML</option>
+                        <option value="yaml">YAML</option>
+                    </select>
+                </div>
+                <br />
+
+                <!-- Language Dropdown -->
+                <div class="heading">
+                    <label id="languages" class="header" for="languagesChoices">Languages:</label>
+                    <select class="options" id="languagesChoices" name="languages">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                    </select>
+                </div>
+                <br />
+
+                <!-- Joke Type Dropdown -->
+                <div class="heading">
+                    <label id="types" class="header" for="jokeType">Joke Type:</label>
+                    <select class="options" id="jokeType" name="joke">
+                        <option value="single">Single</option>
+                        <option value="twopart">Two Part</option>
+                    </select>
+                </div>
+                <br />
+
+                <!-- Flags Checkboxes -->
+                <div class="heading">
+                    <label id="flags" class="header">Flags:</label>
+                    <input type="checkbox" class="circular-checkbox" id="nsfwFlag" name="nsfw">
+                    <label class="checkbox" for="nsfwFlag">NSFW</label>
+
+                    <input type="checkbox" id="politicalFlag" name="political">
+                    <label class="checkbox" for="politicalFlag">Political</label>
+
+                    <input type="checkbox" id="religiousFlag" name="religious">
+                    <label class="checkbox" for="religiousFlag">Religious</label>
+
+                    <input type="checkbox" id="sexistFlag" name="sexist">
+                    <label class="checkbox" for="sexistFlag">Sexist</label>
+                </div>
+                <br />
+
+                <!-- Amount Input -->
+                <div class="heading">
+                    <label id="amount" class="header" for="amountInput">Amount:</label>
+                    <input class="options" type="number" id="amountInput" name="amount">
+                </div>
+                <br />
+
+                <!-- Submit Button -->
+                <button class="button" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
